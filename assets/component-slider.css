@@ -52,6 +52,33 @@ slider-component {
   }
 }
 
+.slider.slider--desktop {
+  position: relative;
+  flex-wrap: inherit;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-left: 1rem;
+  -webkit-overflow-scrolling: touch;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.slider.slider--desktop .slider__slide {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.slider.slider--desktop + .slider-buttons {
+  display: block;
+}
+
+.slider.slider--desktop .banner__content {
+  padding-bottom: 10rem;
+}
+
 /* Scrollbar */
 
 .slider {
