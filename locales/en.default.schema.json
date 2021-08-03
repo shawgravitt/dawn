@@ -465,9 +465,6 @@
         "show_view_all": {
           "label": "Enable \"View all\" button if collection has more products than shown"
         },
-        "swipe_on_desktop": {
-          "label": "Enable swipe on desktop"
-        },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
         },
@@ -491,6 +488,9 @@
         },
         "add_image_padding": {
           "label": "Add padding"
+        },
+        "show_image_outline": {
+          "label": "Show image outline"
         },
         "show_vendor": {
           "label": "Show vendor"
@@ -937,6 +937,9 @@
         "add_image_padding": {
           "label": "Add image padding"
         },
+        "show_image_outline": {
+          "label": "Show image outline"
+        },
         "show_vendor": {
           "label": "Show vendor"
         },
@@ -949,9 +952,6 @@
         "enable_tags": {
           "label": "Enable filtering",
           "info": "[Customize filters](\/admin\/menus)"
-        },
-        "enable_sort": {
-          "label": "Enable sorting"
         }
       }
     },
@@ -1282,6 +1282,9 @@
         "add_image_padding": {
           "label": "Add image padding"
         },
+        "show_image_outline": {
+          "label": "Show image outline"
+        },
         "show_vendor": {
           "label": "Show vendor"
         },
@@ -1476,6 +1479,9 @@
         },
         "add_image_padding": {
           "label": "Add image padding"
+        },
+        "show_image_outline": {
+          "label": "Show image outline"
         },
         "show_vendor": {
           "label": "Show vendor"

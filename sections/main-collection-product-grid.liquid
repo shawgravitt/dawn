@@ -109,13 +109,7 @@
             <ul id="main-collection-product-grid" data-id="{{ section.id }}" class="grid-grid">
               {%- for product in collection.products -%}
                 <li class="{{ grid_item_width }}">
-                  {% render 'product-card',
-                    product_card_product: product,
-                    media_size: section.settings.image_ratio,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    add_image_padding: section.settings.add_image_padding,
-                    show_vendor: section.settings.show_vendor
-                  %}
+                  {% render 'product-card', product_card_product: product, media_size: section.settings.image_ratio, show_secondary_image: section.settings.show_secondary_image, add_image_padding: section.settings.add_image_padding, show_vendor: section.settings.show_vendor, show_image_outline: section.settings.show_image_outline %}
                 </li>
               {%- endfor -%}
             </ul>
@@ -196,6 +190,12 @@
       "id": "add_image_padding",
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.add_image_padding.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_outline",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.show_image_outline.label"
     },
     {
       "type": "checkbox",

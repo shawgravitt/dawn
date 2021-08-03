@@ -72,6 +72,7 @@
             show_secondary_image: section.settings.show_secondary_image,
             add_image_padding: section.settings.add_image_padding,
             show_vendor: section.settings.show_vendor
+            show_image_outline: section.settings.show_image_outline
           %}
         </li>
       {%- else -%}
@@ -163,7 +164,7 @@
       "type": "checkbox",
       "id": "swipe_on_desktop",
       "default": true,
-      "label": "t:sections.featured-collection.settings.swipe_on_desktop.label"
+      "label": "Enable swipe on desktop"
     },
     {
       "type": "checkbox",
@@ -206,6 +207,12 @@
       "id": "add_image_padding",
       "default": false,
       "label": "t:sections.featured-collection.settings.add_image_padding.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_outline",
+      "default": true,
+      "label": "t:sections.featured-collection.settings.show_image_outline.label"
     },
     {
       "type": "checkbox",

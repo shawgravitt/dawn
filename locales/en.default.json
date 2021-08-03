@@ -228,7 +228,7 @@
       "empty": "No products found",
       "from": "From",
       "filter_and_sort": "Filter and sort",
-      "filter_by_label": "Refine",
+      "filter_by_label": "Filter by",
       "filter_button": "Filter",
       "filters_selected": {
         "one": "{{ count }} selected",
