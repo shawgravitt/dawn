@@ -1107,10 +1107,6 @@ deferred-media {
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
-.button:focus:not(:focus-visible) {
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border));
-}
-
 .button,
 .button-label,
 .shopify-challenge__button,
@@ -1853,14 +1849,6 @@ menu-drawer + .header__search {
 .header__search {
   display: inline-flex;
   line-height: 0;
-}
-
-.header--top-center > .header__search {
-  display: none;
-}
-
-.header--top-center * > .header__search {
-  display: inline-flex;
 }
 
 @media screen and (min-width: 990px) {
