@@ -13,6 +13,18 @@
 <script src="{{ 'collection-filters-form.js' | asset_url }}" defer="defer"></script>
 {%- paginate collection.products by section.settings.products_per_page -%}
 
+{% liquid 
+  case section.settings.products_per_row
+     when 2
+       assign grid_item_width = 'col-lg-6'
+     when 3
+       assign grid_item_width = 'col-sm-6 col-md-4 col-lg-4'
+     when 4
+       assign grid_item_width = 'col-sm-6 col-md-3 col-lg-3'
+  endcase
+
+%}
+
 {%- if section.settings.sidebar_filter -%}
   <div class="page-width">
   <div class="grid-grid">
@@ -96,7 +108,7 @@
 
             <ul id="main-collection-product-grid" data-id="{{ section.id }}" class="grid-grid">
               {%- for product in collection.products -%}
-                <li class="col-sm-6 col-md-3 col-lg-3">
+                <li class="{{ grid_item_width }}">
                   {% render 'product-card',
                     product_card_product: product,
                     media_size: section.settings.image_ratio,
@@ -136,9 +148,18 @@
       "id": "products_per_page",
       "min": 8,
       "max": 24,
-      "step": 4,
-      "default": 16,
+      "step": 1,
+      "default": 24,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "Products per row"
     },
     {
       "type": "header",
@@ -197,8 +218,7 @@
       "type": "checkbox",
       "id": "sidebar_filter",
       "default": true,
-      "label": "Show Filters as vertical sidebar.",
-      "info": "To show filter categories add tags to products with the format Group_Tag Name. For example, some of the tags would be Brand_Nike, Color_Red, Material_Leather."
+      "label": "Show Filters as vertical sidebar."
     },
     {
       "type": "checkbox",

@@ -35,6 +35,10 @@
   padding: 1rem 0;
 }
 
+.collection-filters-sidebar .facet-checkbox .icon-checkmark {
+  left: 0.3rem;
+}
+
 .collection-filters-sidebar .disclosure-has-popup[open] > summary::before {
   display: none;
 }

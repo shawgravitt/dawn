@@ -806,7 +806,7 @@ summary::-webkit-details-marker {
   width: 1.5rem;
 }
 
-.title-wrapper-with-link a {
+.title-wrapper-with-link a:not(.button) {
   color: rgb(var(--color-link));
   margin-top: 0;
   flex-shrink: 0;
