@@ -79,11 +79,39 @@
         "color_scheme": "background-1",
         "layout": "image_first"
       }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "text": {
+          "type": "paragraph",
+          "settings": {
+          }
+        },
+        "form": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "form"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_products",
+    "newsletter",
     "image_text"
   ]
 }

@@ -754,6 +754,10 @@ summary::-webkit-details-marker {
   flex-wrap: wrap;
 }
 
+.grid-grid .title-wrapper-with-link {
+  display: block;
+}
+
 .title--primary {
   margin: 4rem 0;
 }

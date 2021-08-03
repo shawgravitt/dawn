@@ -42,7 +42,7 @@
 }
 
 .newsletter-form__button {
-  margin-left: 1.4rem;
+  margin-left: 0;
 }
 
 @media screen and (max-width: 989px) {

@@ -204,7 +204,7 @@ slider-component .slider-buttons {
   transform: rotate(90deg) translateX(-0.15rem) scale(1.07);
 }
 
-.grid-grid .slider-button--prev{
+.grid-grid .slider-button:disabled {
   opacity: 0;
 }
 
