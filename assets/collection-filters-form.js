@@ -81,7 +81,7 @@ class CollectionFiltersForm extends HTMLElement {
     const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
 
     const facetDetailsElements =
-      parsedHTML.querySelectorAll('#CollectionFiltersForm .js-filter, #CollectionFiltersFormMobile .js-filter');
+      parsedHTML.querySelectorAll('#CollectionFiltersForm .js-filter, #CollectionFiltersFormMobile .js-filter, #CollectionFiltersFormSort .js-filter');
     const matchesIndex = (element) => element.dataset.index === event?.target.closest('.js-filter')?.dataset.index
     const facetsToRender = Array.from(facetDetailsElements).filter(element => !matchesIndex(element));
     const countsToRender = Array.from(facetDetailsElements).find(matchesIndex);

@@ -60,17 +60,9 @@ slider-component {
   scroll-behavior: smooth;
   scroll-padding-left: 1rem;
   -webkit-overflow-scrolling: touch;
-  padding-left: 0;
-  padding-bottom: 0;
 }
 
-.slider.slider--desktop .slider__slide {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-}
+
 .slider.slider--desktop + .slider-buttons {
   display: block;
 }

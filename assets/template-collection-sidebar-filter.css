@@ -1,0 +1,41 @@
+.collection-filters-sidebar .facets__disclosure {
+  border: none;
+  border-top: 1px solid rgba(var(--color-foreground), 0.55);
+  margin: 0;
+  box-shadow: none;
+}
+
+.collection-filters-sidebar .facets__display {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  border: none;
+  left: 0;
+  max-height: unset;
+}
+.collection-filters-sidebar .facets__header {
+  display: none;
+}
+
+.collection-filters-sidebar .facets__form {
+  display: block;
+  width: 100%;
+}
+
+.collection-filters-sidebar .facets__wrapper {
+  grid-column: none;
+  grid-row: none;
+  display: block;
+  flex-wrap: unset;
+  margin-left: 0;
+  position: relative;
+}
+
+.collection-filters-sidebar .facet-checkbox {
+  padding: 1rem 0;
+}
+
+.collection-filters-sidebar .disclosure-has-popup[open] > summary::before {
+  display: none;
+}
+
