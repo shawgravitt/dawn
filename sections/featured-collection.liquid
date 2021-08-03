@@ -41,7 +41,7 @@
 
     {%- if change_layout -%}
       {%- if section.settings.show_view_all and more_in_collection -%}
-        <div class="center{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
+        <div>
           <a href="{{ section.settings.collection.url }}"
             class="button"
             aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
@@ -52,9 +52,9 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
+    {% comment %} {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
       <a href="{{ section.settings.collection.url }}" class="link underlined-link large-up-hide">{{ section.settings.view_all_button_text | default: 'View All' }}</a>
-    {%- endif -%}
+    {%- endif -%} {% endcomment %}
   </div>
 
   {%- if change_layout -%}
