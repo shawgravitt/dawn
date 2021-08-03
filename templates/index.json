@@ -36,14 +36,49 @@
       "type": "featured-collection",
       "settings": {
         "title": "Featured products",
+        "subtitle": "<p>Collection description.<\/p>",
         "collection": "my-products",
         "products_to_show": 8,
         "show_view_all": true,
+        "view_all_button_text": "",
+        "swipe_on_desktop": true,
         "swipe_on_mobile": true,
         "image_ratio": "adapt",
         "show_secondary_image": false,
         "add_image_padding": false,
+        "show_image_outline": true,
         "show_vendor": false
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails"
+          }
+        },
+        "text": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "form": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "form"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
       }
     },
     "image_text": {
@@ -80,31 +115,13 @@
         "layout": "image_first"
       }
     },
-    "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-          }
-        },
-        "text": {
-          "type": "paragraph",
-          "settings": {
-          }
-        },
-        "form": {
-          "type": "email_form",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "form"
-      ],
+    "16280232804d8e070c": {
+      "type": "instafeed",
       "settings": {
+        "heading_font": "helvetica_n4",
+        "heading_size": 20,
+        "feed_width": 100,
+        "html_area": ""
       }
     }
   },
@@ -112,6 +129,7 @@
     "image_banner",
     "featured_products",
     "newsletter",
-    "image_text"
+    "image_text",
+    "16280232804d8e070c"
   ]
 }
