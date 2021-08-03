@@ -945,7 +945,7 @@
         },
         "enable_tags": {
           "label": "Povolit filtrování",
-          "info": "[Přizpůsobte si filtry](\/admin\/menus)"
+          "info": "[Přizpůsobte si filtry](/admin/menus)"
         },
         "enable_filtering": {
           "label": "Povolit filtrování",
@@ -1502,7 +1502,7 @@
           "label": "Zobrazit dodavatele"
         },
         "paragraph__1": {
-          "content": "Dynamická doporučení využívají informace o objednávkách a produktech, aby se postupem času měnila a vylepšovala. [Zjistit více](https:\/\/help.shopify.com\/en\/themes\/development\/recommended-products)"
+          "content": "Dynamická doporučení využívají informace o objednávkách a produktech, aby se postupem času měnila a vylepšovala. [Zjistit více](https://help.shopify.com/en/themes/development/recommended-products)"
         },
         "show_image_outline": {
           "label": "Zobrazit obrys obrázku"

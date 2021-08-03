@@ -945,7 +945,7 @@
         },
         "enable_tags": {
           "label": "Abilita i filtri",
-          "info": "[Personalizza i filtri](\/admin\/menus)"
+          "info": "[Personalizza i filtri](/admin/menus)"
         },
         "enable_filtering": {
           "label": "Abilita i filtri",
@@ -1502,7 +1502,7 @@
           "label": "Mostra fornitore"
         },
         "paragraph__1": {
-          "content": "Le raccomandazioni dinamiche utilizzano i dati di ordini e prodotti per cambiare e migliorare nel tempo. [Maggiori informazioni](https:\/\/shopify.dev\/tutorials\/develop-theme-recommended-products)"
+          "content": "Le raccomandazioni dinamiche utilizzano i dati di ordini e prodotti per cambiare e migliorare nel tempo. [Maggiori informazioni](https://shopify.dev/tutorials/develop-theme-recommended-products)"
         },
         "show_image_outline": {
           "label": "Mostra contorno dell'immagine"

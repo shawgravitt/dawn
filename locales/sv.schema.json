@@ -959,7 +959,7 @@
         },
         "enable_tags": {
           "label": "Aktivera filtrering",
-          "info": "[Kundfilter](\/admin\/menus)"
+          "info": "[Kundfilter](/admin/menus)"
         },
         "enable_filtering": {
           "label": "Aktivera filtrering",
@@ -1516,7 +1516,7 @@
           "label": "Visa säljare"
         },
         "paragraph__1": {
-          "content": "Dynamiska rekommendationer använder order- och produktinformation för att ändras och förbättras över tid. [Läs mer](https:\/\/help.shopify.com\/en\/themes\/development\/recommended-products)"
+          "content": "Dynamiska rekommendationer använder order- och produktinformation för att ändras och förbättras över tid. [Läs mer](https://help.shopify.com/en/themes/development/recommended-products)"
         },
         "show_image_outline": {
           "label": "Visa kantlinje för bild"
