@@ -9,7 +9,7 @@
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% endif %}">
   <div class="title-wrapper-with-link">
-    <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+    <h1 class="title title--primary center">{{ 'sections.cart.title' | t }}</h1>
     <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
   </div>
 
@@ -27,10 +27,11 @@
           <table class="cart-items">
             <thead>
               <tr>
-                <th class="caption-with-letter-spacing" colspan="2" scope="col">{{ 'sections.cart.headings.product' | t }}</th>
-                <th class="right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.price' | t }}</th>
-                <th class="cart-items__heading--wide medium-up caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.quantity' | t }}</th>
-                <th class="medium-up right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
+                <th class="caption-with-letter-spacing left" colspan="2" scope="col">{{ 'sections.cart.headings.product' | t }}</th>
+                <th class="center caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.price' | t }}</th>
+                <th class="medium-up caption-with-letter-spacing center" colspan="1" scope="col">{{ 'sections.cart.headings.quantity' | t }}</th>
+                <th class="medium-up center caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
+                <th class="medium-up right caption-with-letter-spacing" colspan="1" scope="col">Remove</th>
               </tr>
             </thead>
 
@@ -40,11 +41,11 @@
                   <td class="cart-item__media">
                     {% if item.image %}
                       <img class="cart-item__image"
-                        src="{{ item.image | img_url: '150x' }}"
+                        src="{{ item.image | img_url: '300x' }}"
                         alt="{{ item.image.alt | escape }}"
                         loading="lazy"
-                        width="75"
-                        height="{{ 75 | divided_by: item.image.aspect_ratio | ceil }}"
+                        width="150"
+                        height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
                       >
                     {% endif %}
                   </td>
@@ -109,7 +110,7 @@
                     </p>
                   </td>
 
-                  <td class="cart-item__prices right">
+                  <td class="cart-item__prices">
                     <div class="cart-item__price-wrapper">
                       {%- if item.original_price != item.final_price -%}
                         <dl class="cart-item__discounted-prices">
@@ -117,14 +118,14 @@
                             {{ 'products.product.price.regular_price' | t }}
                           </dt>
                           <dd>
-                            <s class="cart-item__old-price price price--end">
+                            <s class="cart-item__old-price price price--center">
                               {{ item.original_price | money }}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
-                          <dd class="price price--end">
+                          <dd class="price price--center">
                             {{ item.final_price | money }}
                           </dd>
                         </dl>
@@ -142,7 +143,7 @@
                           </div>
                         {%- endif -%}
                       {%- else -%}
-                        <span class="price price--end">
+                        <span class="price price--center">
                           {{ item.original_price | money }}
                         </span>
                       {%- endif -%}
@@ -174,7 +175,7 @@
                     </quantity-input>
                   </td>
 
-                  <td class="cart-item__totals right">
+                  <td class="cart-item__totals center medium-up">
                     <div class="loading-overlay hidden">
                       <div class="loading-overlay__spinner">
                         <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -189,17 +190,21 @@
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
-                          <dd class="price price--end">
+                          <dd class="price price--center">
                             {{ item.final_line_price | money }}
                           </dd>
                         </dl>
                       {%- else -%}
-                        <span class="price price--end">
+                        <span class="price price--center">
                           {{ item.original_line_price | money }}
                         </span>
                       {%- endif -%}
                     </div>
-
+                  </td>
+                  <td class="cart-item__remove right">
+                    <label class="medium-down" >
+                      Remove
+                    </label>
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                         {% render 'icon-remove' %}

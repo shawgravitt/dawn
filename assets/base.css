@@ -475,7 +475,9 @@ table:not([class]) th {
     display: none !important;
   }
 }
-
+.left {
+  text-align: left;
+}
 .center {
   text-align: center;
 }
