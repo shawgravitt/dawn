@@ -4,10 +4,8 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
 
-<link rel="preload" href="{{ 'component-badge.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-<noscript>{{ 'component-badge.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
 <script src="{{ 'collection-filters-form.js' | asset_url }}" defer="defer"></script>
@@ -103,7 +101,7 @@
                   </summary>
                   <div class="facets__display">
                     <div class="facets__header">
-                      {%- assign max_price_amount = filter.range_max | money | escape -%}
+                      {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
                       <span class="facets__selected">{{ "sections.collection_template.max_price" | t: price: max_price_amount }}</span>
                       <facet-remove>
                         <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link" >
@@ -112,8 +110,8 @@
                       </facet-remove>
                     </div>
                     <price-range class="facets__price">
+                      <span class="field-currency">{{ cart.currency.symbol }}</span>
                       <div class="field">
-                        <span class="field__currency">{{ cart.currency.symbol }}</span>
                         <input class="field__input"
                           name="{{ filter.min_value.param_name }}"
                           id="Filter-{{ filter.label | escape }}-GTE"
@@ -128,8 +126,9 @@
                         </input>
                         <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'sections.collection_template.from' | t }}</label>
                       </div>
+
+                      <span class="field-currency">{{ cart.currency.symbol }}</span>
                       <div class="field">
-                        <span class="field__currency">{{ cart.currency.symbol }}</span>
                         <input class="field__input"
                           name="{{ filter.max_value.param_name }}"
                           id="Filter-{{ filter.label | escape }}-LTE"
@@ -299,8 +298,8 @@
                         <p class="mobile-facets__info">{{ "sections.collection_template.max_price" | t: price: max_price_amount }}</p>
 
                         <price-range class="facets__price">
+                          <span class="field-currency">{{ cart.currency.symbol }}</span>
                           <div class="field">
-                            <span class="field__currency">{{ cart.currency.symbol }}</span>
                             <input class="field__input"
                               name="{{ filter.min_value.param_name }}"
                               id="Mobile-Filter-{{ filter.label | escape }}-GTE"
@@ -315,8 +314,9 @@
                             </input>
                             <label class="field__label" for="Mobile-Filter-{{ filter.label | escape }}-GTE">{{ 'sections.collection_template.from' | t }}</label>
                           </div>
+
+                          <span class="field-currency">{{ cart.currency.symbol }}</span>
                           <div class="field">
-                            <span class="field__currency">{{ cart.currency.symbol }}</span>
                             <input class="field__input"
                               name="{{ filter.max_value.param_name }}"
                               id="Mobile-Filter-{{ filter.label | escape }}-LTE"
@@ -378,7 +378,7 @@
 
             <ul id="main-collection-product-grid" data-id="{{ section.id }}" class="grid-grid">
               {%- for product in collection.products -%}
-                <li class="{{ grid_item_width }}">
+                <li>
                   {% render 'product-card', product_card_product: product, media_size: section.settings.image_ratio, show_secondary_image: section.settings.show_secondary_image, add_image_padding: section.settings.add_image_padding, show_vendor: section.settings.show_vendor, show_image_outline: section.settings.show_image_outline %}
                 </li>
               {%- endfor -%}

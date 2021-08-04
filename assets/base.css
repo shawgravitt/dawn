@@ -2112,6 +2112,7 @@ details-disclosure > details {
   color: rgb(var(--color-foreground));
   word-break: break-word;
 }
+<<<<<<< HEAD
 
 
 
@@ -2172,3 +2173,5 @@ ul.grid-grid {
 .col-sm-2 {position: relative; grid-column: span 2;}
 .col-sm-1 {position: relative; grid-column: span 1;}
 }
+=======
+>>>>>>> e7c0e0ed12d0c99b7901f946898f1392a791eb46
