@@ -626,3 +626,29 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+
+class ProductImage extends HTMLElement {
+  constructor() {
+    super();
+    this.addEventListener('click', this.updateImage);
+  }
+  updateImage() {
+    this.updateMedia()
+  }
+
+  updateMedia() {
+
+    const newMedia = document.querySelector(
+      `[data-media-id="${this.getAttribute('data-media-id')}"]`
+    );
+    
+    if (!newMedia) return;
+    const parent = newMedia.parentElement;
+    console.log(parent);
+    parent.prepend(newMedia);
+    window.setTimeout(() => { parent.scroll(0, 0) });
+  }
+}
+
+customElements.define('product-image', ProductImage);

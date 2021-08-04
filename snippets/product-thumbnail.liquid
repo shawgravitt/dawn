@@ -53,7 +53,7 @@
   {%- endif -%}
 </noscript>
 
-<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+<product-image class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}" data-media-id="{{ section.id }}-{{ media.id }}">
   <span class="product__media-icon motion-reduce" aria-hidden="true">
     {%- liquid
       case media.media_type
@@ -81,16 +81,16 @@
       alt="{{ media.preview_image.alt | escape }}"
     >
   </div>
-<button class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
-  <span class="visually-hidden">
-    {%- if position == 'featured' %}
-      {{ 'products.product.media.open_featured_media' | t }}
-    {%- else -%}
-      {{ 'products.product.media.open_media' | t: index: position }}
-    {%- endif -%}
-  </span>
-</button>
-</modal-opener>
+  <button class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
+    <span class="visually-hidden">
+      {%- if position == 'featured' %}
+        {{ 'products.product.media.open_featured_media' | t }}
+      {%- else -%}
+        {{ 'products.product.media.open_media' | t: index: position }}
+      {%- endif -%}
+    </span>
+  </button>
+</product-image>
 
 {%- if media.media_type != 'image' -%}
   {%- if media.media_type == 'model' -%}
