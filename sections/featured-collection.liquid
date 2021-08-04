@@ -3,11 +3,9 @@
 {{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
 
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-badge.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-badge.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'template-collection.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- liquid
@@ -71,7 +69,7 @@
             media_size: section.settings.image_ratio,
             show_secondary_image: section.settings.show_secondary_image,
             add_image_padding: section.settings.add_image_padding,
-            show_vendor: section.settings.show_vendor
+            show_vendor: section.settings.show_vendor,
             show_image_outline: section.settings.show_image_outline
           %}
         </li>
