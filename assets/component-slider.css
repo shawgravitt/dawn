@@ -109,10 +109,8 @@ slider-component {
 slider-component .slider-buttons {
   position: absolute;
   z-index: 2;
-  
-  width: 100%;
-  top: calc(50% - 5rem);
-  transform: translateY(-50%);
+  right: 0;
+  bottom: 0;
 }
 
 .slider-buttons.slider-buttons--overlay {
@@ -202,10 +200,6 @@ slider-component .slider-buttons {
 
 .slider-button--prev:not([disabled]):hover .icon {
   transform: rotate(90deg) translateX(-0.15rem) scale(1.07);
-}
-
-.grid-grid .slider-button--prev{
-  opacity: 0;
 }
 
 .slider-button:focus-visible {
