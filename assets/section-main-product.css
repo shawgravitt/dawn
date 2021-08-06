@@ -842,10 +842,18 @@ thumb-controller .slider-button--next:not([disabled]):hover .icon {
   }
   thumb-controller .slider-button--prev {
     left: 0px;
-    z-index: 9;
+    z-index: 999;
     
   }
   thumb-controller .slider-button--next {
     right: -35px;
+    z-index: 999;
+  }
+  .product__media.media {
+    padding-top: 100% !important;
+  }
+  .product__media.media img {
+    object-fit: contain;
+    background: #fff;
   }
 }
