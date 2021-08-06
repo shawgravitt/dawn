@@ -2,6 +2,9 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
+      "settings": {
+        "desktop_text_box_position": "flex-end"
+      },
       "blocks": {
         "heading": {
           "type": "heading",
@@ -21,10 +24,7 @@
       "block_order": [
         "heading",
         "button"
-      ],
-      "settings": {
-        "desktop_text_box_position": "flex-end"
-      }
+      ]
     },
     "featured_products": {
       "type": "featured-collection",
@@ -36,28 +36,20 @@
       "type": "image-with-text",
       "blocks": {
         "heading": {
-          "type": "heading",
-          "settings": {
-          }
+          "type": "heading"
         },
         "text": {
-          "type": "text",
-          "settings": {
-          }
+          "type": "text"
         },
         "button": {
-          "type": "button",
-          "settings": {
-          }
+          "type": "button"
         }
       },
       "block_order": [
         "heading",
         "text",
         "button"
-      ],
-      "settings": {
-      }
+      ]
     }
   },
   "order": [
