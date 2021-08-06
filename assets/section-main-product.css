@@ -400,6 +400,8 @@ a.product__text {
   z-index: 1;
   transition: color var(--duration-short) ease,
     opacity var(--duration-short) ease;
+
+  opacity: 0;
 }
 
 .product__media-video .product__media-icon {
@@ -721,7 +723,6 @@ a.product__text {
   width: 2.2rem;
 }
 
-
 .product-single__thumbnails li {
   list-style: none;
 }
@@ -729,7 +730,7 @@ a.product__text {
 .product__media-list {
   display: grid;
   grid-template-rows: auto [last-line];
-  grid-template-columns: 25% [last-col] 75%;
+  grid-template-columns: 20% [last-col] 80%;
 }
 .product__media-item {
   padding-bottom: 10px;
@@ -744,8 +745,53 @@ a.product__text {
   display: block;
   padding-left: 25px;
   max-width: 100%;
+  width: 100%;
   margin-top: -59px;
 }
+
+@media screen and (max-width: 500px) {
+  .product__media-list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'feature feature feature' 'thumb thumb thumb';
+    width: 100%;
+    gap: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .product__media-list .product__media-item {
+    grid-area: thumb;
+    grid-column: span 1;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 0;
+  }
+
+  .product__media-list .product__media-item:first-of-type {
+    padding-left: 0;
+    margin-left: 1rem;
+  }
+  .product__media-list .product__media-item:nth-of-type(2) {
+    margin-left: 1rem;
+  }
+
+  .product__media-item:last-of-type {
+    grid-area: feature;
+    margin-top: 0;
+    grid-column: span 2;
+    padding-left: 0;
+  }
+}
+
+thumb-controller {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
 .product__media-item,
 thumb-controller .slider-button {
   max-width: 170px;
@@ -756,6 +802,7 @@ thumb-controller .slider-button {
   text-align: center;
   margin: auto;
 }
+
 
 thumb-controller .slider-button--prev {
   margin-bottom: 15px;
@@ -775,4 +822,30 @@ thumb-controller .slider-button--next .icon {
 
 thumb-controller .slider-button--next:not([disabled]):hover .icon {
   transform: rotate(0deg) scale(1.07);
+}
+
+
+@media screen and (max-width: 770px) {
+  .product__media-item,
+  thumb-controller .slider-button {
+    max-width: 70px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  thumb-controller .slider-button {
+    position: absolute;
+    bottom: 90px;
+    transform: rotate(-90deg) translateY(-50%);
+    margin: 0;
+    max-width: 44px;
+  }
+  thumb-controller .slider-button--prev {
+    left: 0px;
+    z-index: 9;
+    
+  }
+  thumb-controller .slider-button--next {
+    right: -35px;
+  }
 }
