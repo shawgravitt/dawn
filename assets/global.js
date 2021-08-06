@@ -535,7 +535,7 @@ class VariantSelects extends HTMLElement {
     );
     if (!newMedia) return;
     const parent = newMedia.parentElement;
-    parent.prepend(newMedia);
+    parent.append(newMedia);
     window.setTimeout(() => { parent.scroll(0, 0) });
   }
 
@@ -638,17 +638,41 @@ class ProductImage extends HTMLElement {
   }
 
   updateMedia() {
-
     const newMedia = document.querySelector(
       `[data-media-id="${this.getAttribute('data-media-id')}"]`
     );
-    
+
     if (!newMedia) return;
     const parent = newMedia.parentElement;
-    console.log(parent);
-    parent.prepend(newMedia);
-    window.setTimeout(() => { parent.scroll(0, 0) });
+    parent.append(newMedia);
   }
 }
 
 customElements.define('product-image', ProductImage);
+
+class thumbController extends HTMLElement {
+  constructor() {
+    super();
+    this.slider = this.querySelector('#mediaList');
+    this.prevButton = this.querySelector('#thumbPrev');
+    this.nextButton = this.querySelector('#thumbNext');
+
+    if (!this.slider || !this.nextButton) return;
+    this.prevButton.addEventListener('click', this.onButtonClick.bind(this));
+    this.nextButton.addEventListener('click', this.onButtonClick.bind(this));
+  }
+
+  onButtonClick(event) {
+    event.preventDefault();
+
+    if (event.currentTarget.name === 'next-thumbnail') {
+      this.slider.prepend(this.slider.lastChild);
+    }
+
+    if (event.currentTarget.name === 'previous-thumbnail') {
+      this.slider.append(this.slider.firstChild);
+    }
+  }
+}
+
+customElements.define('thumb-controller', thumbController);

@@ -38,7 +38,7 @@
   }
 }
 
-/* @media screen and (min-width: 990px) {
+@media screen and (min-width: 990px) {
   .product:not(.product--no-media) .product__media-wrapper {
     max-width: 64%;
     width: calc(64% - 1rem / 2);
@@ -49,7 +49,7 @@
     max-width: 36%;
     width: calc(36% - 1rem / 2);
   }
-} */
+}
 
 /* Dynamic checkout */
 
@@ -363,7 +363,7 @@ a.product__text {
 }
 
 @media screen and (min-width: 750px) {
-  .product__media-item:first-child {
+  .product__media-item:last-child {
     width: 100%;
   }
 }
@@ -409,9 +409,16 @@ a.product__text {
 .product__modal-opener--image .product__media-toggle:hover {
   cursor: zoom-in;
 }
+.product__media-item:last-of-type .product__modal-opener--image .product__media-toggle:hover {
+  cursor: default;
+}
 
 .product__modal-opener:hover .product__media-icon {
   border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+}
+
+.product__media-item:last-of-type .product__modal-opener:hover .product__media-icon {
+  display: none;
 }
 
 @media screen and (min-width: 750px) {
@@ -712,4 +719,60 @@ a.product__text {
   height: auto;
   margin: 0;
   width: 2.2rem;
+}
+
+
+.product-single__thumbnails li {
+  list-style: none;
+}
+
+.product__media-list {
+  display: grid;
+  grid-template-rows: auto [last-line];
+  grid-template-columns: 25% [last-col] 75%;
+}
+.product__media-item {
+  padding-bottom: 10px;
+}
+.product__media-item:nth-child(n+4) {
+  display: none;
+}
+.product__media-item:last-of-type {
+  grid-column: last-col / span 1;
+  grid-row: 1 / last-line;
+  grid-row-start: span 9000;
+  display: block;
+  padding-left: 25px;
+  max-width: 100%;
+  margin-top: -59px;
+}
+.product__media-item,
+thumb-controller .slider-button {
+  max-width: 170px;
+}
+
+thumb-controller .slider-button {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+thumb-controller .slider-button--prev {
+  margin-bottom: 15px;
+}
+
+thumb-controller .slider-button--prev .icon {
+  transform: rotate(180deg);
+}
+
+thumb-controller .slider-button--prev:not([disabled]):hover .icon {
+  transform: rotate(180deg) scale(1.07);
+}
+
+thumb-controller .slider-button--next .icon {
+  transform: rotate(0deg);
+}
+
+thumb-controller .slider-button--next:not([disabled]):hover .icon {
+  transform: rotate(0deg) scale(1.07);
 }
