@@ -3,8 +3,11 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
 <script src="{{ 'collection-filters-form.js' | asset_url }}" defer="defer"></script>
 
 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
@@ -23,6 +26,7 @@
 <div class="page-width collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
     {%- assign total_active_values = 0 -%}
+
     {%- unless section.settings.collapse_on_larger_devices -%}
       <collection-filters-form class="facets small-hide">
         <form id="CollectionFiltersForm" class="facets__form">
@@ -31,6 +35,7 @@
               {%- unless collection.filters == empty -%}
                 <p class="facets__heading caption-large">{{ 'sections.collection_template.filter_by_label' | t }}</p>
               {%- endunless -%}
+
               {%- for filter in collection.filters -%}
                 {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
                 {% case filter.type %}
@@ -51,6 +56,7 @@
                           </a>
                         </facet-remove>
                       </div>
+
                       <ul class="facets__list list-unstyled" role="list">
                         {%- for value in filter.values -%}
                           <li class="list-menu__item facets__item">
@@ -62,9 +68,11 @@
                                 {% if value.active %}checked{% endif %}
                                 {% if value.count == 0 and value.active == false %}disabled{% endif %}
                               >
+
                               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                                 <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
                               </svg>
+
                               <svg class="icon icon-checkmark"
                                 width="11"
                                 height="7"
@@ -77,6 +85,8 @@
                                   stroke-width="1.75"
                                   stroke-linecap="round"
                                   stroke-linejoin="round" />
+                              </svg>
+
                               </svg>
                               {{ value.label | escape }} ({{ value.count }})
                             </label>
