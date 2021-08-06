@@ -1,19 +1,149 @@
 {
-  "wrapper": "div.page-width",
+  "wrapper": "div.page-width.services-page",
   "sections": {
     "main": {
       "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Design Assitance"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Page text<p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
+        "color_scheme": "background-2",
+        "layout": "text_first",
+        "full_width": true
       }
     },
     "custom": {
       "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Custom"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Custom text<p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
+        "color_scheme": "background-1",
+        "layout": "image_first",
+        "full_width": false
+      }
+    },
+    "trade": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Trade Program"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Custom text<p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Apply Here"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "layout": "text_first",
+        "full_width": false
+      }
+    },
+    "harps": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Harps, Washers, & Finials"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Custom text<p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "layout": "image_first",
+        "full_width": false
+      }
+    },
+    "reserves": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Reserves & Approvals"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Custom text<p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "layout": "text_first",
+        "full_width": false
       }
     }
   },
   "order": [
     "main",
-    "custom"
+    "custom",
+    "trade",
+    "harps",
+    "reserves"
   ]
 }

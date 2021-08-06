@@ -1,0 +1,52 @@
+{
+  "wrapper": "div.page-width.trade-program-page",
+  "sections": {
+    "main": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Edgar-Reeves Trade Program"
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "layout": "text_first",
+        "full_width": true
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Custom centered text.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": false
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text",
+    "multicolumn"
+  ]
+}
