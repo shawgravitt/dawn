@@ -1,4 +1,3 @@
-{% comment %}theme-check-disable TemplateLength{% endcomment %}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
@@ -12,17 +11,6 @@
 <script src="{{ 'collection-filters-form.js' | asset_url }}" defer="defer"></script>
 
 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-
-{% liquid 
-  case section.settings.products_per_row
-     when 2
-       assign grid_item_width = 'col-lg-6'
-     when 3
-       assign grid_item_width = 'col-sm-6 col-md-4 col-lg-4'
-     when 4
-       assign grid_item_width = 'col-sm-6 col-md-3 col-lg-3'
-  endcase
-%}
 
 <div class="page-width collection-filters" id="main-collection-filters" data-id="{{ section.id }}">
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
@@ -488,9 +476,13 @@
           </div>
         </div>
 
-        <ul id="main-collection-product-grid" data-id="{{ section.id }}" class="grid-grid">
+        <ul id="main-collection-product-grid" data-id="{{ section.id }}" class="
+          grid grid--2-col negative-margin product-grid
+          {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %}
+            {% if collection.products_count == 4 %} grid--4-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}
+          {% endif %}">
           {%- for product in collection.products -%}
-            <li class="{{ grid_item_width }}">
+            <li class="grid__item">
               {% render 'product-card', product_card_product: product, media_size: section.settings.image_ratio, show_secondary_image: section.settings.show_secondary_image, add_image_padding: section.settings.add_image_padding, show_vendor: section.settings.show_vendor, show_image_outline: section.settings.show_image_outline %}
             </li>
           {%- endfor -%}
@@ -517,15 +509,6 @@
       "step": 4,
       "default": 16,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
-    },
-    {
-      "type": "range",
-      "id": "products_per_row",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 4,
-      "label": "Products per row"
     },
     {
       "type": "header",
@@ -595,7 +578,7 @@
     {
       "type": "checkbox",
       "id": "collapse_on_larger_devices",
-      "default": true,
+      "default": false,
       "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
     }
   ]
