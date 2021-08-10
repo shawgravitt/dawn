@@ -52,26 +52,6 @@ slider-component {
   }
 }
 
-.slider.slider--desktop {
-  position: relative;
-  flex-wrap: inherit;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scroll-padding-left: 1rem;
-  -webkit-overflow-scrolling: touch;
-}
-
-
-.slider.slider--desktop + .slider-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.slider.slider--desktop .banner__content {
-  padding-bottom: 10rem;
-}
-
 /* Scrollbar */
 
 .slider {
@@ -204,10 +184,30 @@ slider-component .slider-buttons {
   transform: rotate(90deg) translateX(-0.15rem) scale(1.07);
 }
 
+.slider-button:focus-visible {
+  z-index: 1;
+}
+
 .grid-grid .slider-button:disabled {
   opacity: 0;
 }
 
-.slider-button:focus-visible {
-  z-index: 1;
+
+.slider.slider--desktop {
+  position: relative;
+  flex-wrap: inherit;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-left: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider.slider--desktop + .slider-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider.slider--desktop .banner__content {
+  padding-bottom: 10rem;
 }
