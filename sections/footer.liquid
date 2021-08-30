@@ -209,7 +209,7 @@
     <div class="footer__content-bottom-wrapper page-width">
       <div class="footer__copyright">
         <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
-        <small class="copyright__content"><a href="https://nicelybuilt.com/" rel="noopener noreferrer"  target="_blank">This site is Nicely Built.</a></small>
+        <small class="copyright__content"><a href="https://acadia.io/" rel="noopener noreferrer"  target="_blank">An Acadia Site.</a></small>
       </div>
     </div>
   </div>
@@ -238,15 +238,16 @@
 
     onContainerKeyUp(event) {
       if (event.code.toUpperCase() !== 'ESCAPE') return;
-      
+
       this.hidePanel();
       this.elements.button.focus();
     }
 
     onItemClick(event) {
       event.preventDefault();
+      const form = this.querySelector('form');
       this.elements.input.value = event.currentTarget.dataset.value;
-      this.querySelector('form')?.submit();
+      if (form) form.submit();
     }
 
     openSelector() {
