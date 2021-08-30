@@ -29,8 +29,8 @@
     "featured-products": {
       "type": "featured-collection",
       "settings": {
-        "title": "Shop best-sellers",
-        "collection": "all"
+        "collection": "all",
+        "image_ratio": "square"
       }
     }
   },
